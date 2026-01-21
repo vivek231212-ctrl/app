@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FoodItem } from './types.ts';
 import Header from './components/Header.tsx';
 import SearchBar from './components/SearchBar.tsx';
@@ -46,6 +46,16 @@ const FOOD_DATA: FoodItem[] = [
     category: 'Starter'
   }
 ];
+
+const AiBanner: React.FC<{ text: string }> = ({ text }) => (
+    <div style={{ position: 'relative', height: '38px', width: '100%' }}>
+         <svg width="358" height="38" viewBox="0 0 358 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 12C0 5.37258 5.37258 0 12 0H346C352.627 0 358 5.37258 358 12V24C358 30.6274 352.627 36 346 36H12C5.37259 36 0 30.6274 0 24V12Z" fill="#8FFC86"/>
+            <text fill="black" x="12" y="24" style={{ fontSize: '14px', fontWeight: 600, fontFamily: 'Quicksand' }}>{text}</text>
+            <path d="M337.975 21.8547L341.767 18.496C342.069 18.1972 342.087 17.8237 341.767 17.5637L337.975 14.1453C337.727 13.9271 337.323 13.96 337.105 14.208C336.801 14.5905 337.01 14.976 337.168 15.0776L339.762 17.3785L329.426 17.3785C329.085 17.3785 328.804 17.6593 328.804 18C328.804 18.3407 329.052 18.6215 329.396 18.6215L339.759 18.6215L337.165 20.9224C336.917 21.1704 336.884 21.544 337.102 21.792C337.353 22.04 337.727 22.0729 337.975 21.8547Z" fill="black"/>
+        </svg>
+    </div>
+);
 
 const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -123,15 +133,5 @@ const App: React.FC = () => {
     </div>
   );
 };
-
-const AiBanner: React.FC<{ text: string }> = ({ text }) => (
-    <div style={{ position: 'relative', height: '38px', width: '100%' }}>
-         <svg width="358" height="38" viewBox="0 0 358 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 12C0 5.37258 5.37258 0 12 0H346C352.627 0 358 5.37258 358 12V24C358 30.6274 352.627 36 346 36H12C5.37259 36 0 30.6274 0 24V12Z" fill="#8FFC86"/>
-            <text fill="black" x="12" y="24" style={{ fontSize: '14px', fontWeight: 600, fontFamily: 'Quicksand' }}>{text}</text>
-            <path d="M337.975 21.8547L341.767 18.496C342.069 18.1972 342.087 17.8237 341.767 17.5637L337.975 14.1453C337.727 13.9271 337.323 13.96 337.105 14.208C336.801 14.5905 337.01 14.976 337.168 15.0776L339.762 17.3785L329.426 17.3785C329.085 17.3785 328.804 17.6593 328.804 18C328.804 18.3407 329.052 18.6215 329.396 18.6215L339.759 18.6215L337.165 20.9224C336.917 21.1704 336.884 21.544 337.102 21.792C337.353 22.04 337.727 22.0729 337.975 21.8547Z" fill="black"/>
-        </svg>
-    </div>
-);
 
 export default App;
