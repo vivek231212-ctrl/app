@@ -1,11 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
-import { FoodItem } from './types';
-import Header from './components/Header';
-import SearchBar from './components/SearchBar';
-import FilterBar from './components/FilterBar';
-import FoodCard from './components/FoodCard';
-import { getSmartRecommendation } from './services/geminiService';
+import { FoodItem } from './types.ts';
+import Header from './components/Header.tsx';
+import SearchBar from './components/SearchBar.tsx';
+import FilterBar from './components/FilterBar.tsx';
+import FoodCard from './components/FoodCard.tsx';
+import { getSmartRecommendation } from './services/geminiService.ts';
 
 const FOOD_DATA: FoodItem[] = [
   {

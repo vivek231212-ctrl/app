@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { FoodItem } from '../types';
+import { FoodItem } from '../types.ts';
 
 interface FoodCardProps {
   item: FoodItem;
